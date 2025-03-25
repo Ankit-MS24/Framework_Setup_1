@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Test access to user cart page after login","6118","test_access_dashboard","tests.test_ui","Tue Mar 25 14:15:40 IST 2025","passed","Tue Mar 25 14:15:46 IST 2025","","test_login","",""
+"","20319","test_lcd_buyback","tests.test_ui","Tue Mar 25 14:15:46 IST 2025","broken","Tue Mar 25 14:16:06 IST 2025","","test_login","",""
+"","1452","test_dashboard_elements","tests.test_ui","Mon Mar 17 12:18:11 IST 2025","broken","Mon Mar 17 12:18:13 IST 2025","","test_login","",""
+"Test valid login with robust click handling","16101","test_valid_login","tests.test_ui","Tue Mar 25 14:15:24 IST 2025","passed","Tue Mar 25 14:15:40 IST 2025","","test_login","",""
