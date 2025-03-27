@@ -1,11 +1,11 @@
 import requests
 from requests.auth import HTTPBasicAuth
 
-# Jenkins credentials
+# Jenkinsfile credentials
 JENKINS_URL = "http://localhost:8080"
 JOB_NAME = "MS_AUTOMATION_1"  # Change this to your actual job name
 USERNAME = "Ankit Sadavrati"
-API_TOKEN = "asdfghjkl"  # Replace with your Jenkins API token
+API_TOKEN = "asdfghjkl"  # Replace with your Jenkinsfile API token
 
 # Step 1: Get the CSRF Crumb
 crumb_url = f"{JENKINS_URL}/crumbIssuer/api/json"
@@ -15,9 +15,9 @@ crumb_response = requests.get(crumb_url, auth=auth)
 if crumb_response.status_code == 200:
     crumb_data = crumb_response.json()
     crumb_value = crumb_data["crumb"]
-    crumb_field = crumb_data["crumbRequestField"]  # This should be "Jenkins-Crumb"
+    crumb_field = crumb_data["crumbRequestField"]  # This should be "Jenkinsfile-Crumb"
 
-    # Step 2: Trigger the Jenkins job with the Crumb included
+    # Step 2: Trigger the Jenkinsfile job with the Crumb included
     build_url = f"{JENKINS_URL}/job/{JOB_NAME}/build"
     headers = {crumb_field: crumb_value}  # Dynamic header field
     response = requests.post(build_url, auth=auth, headers=headers)
