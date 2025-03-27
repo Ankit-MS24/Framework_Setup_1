@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'windows'  // Ensure Jenkins runs this on a Windows agent
-    }
+    agent any
 
     environment {
         PYTHON = 'C:\\Python39\\python.exe'  // Update with your Python installation path
