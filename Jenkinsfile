@@ -29,13 +29,21 @@ pipeline {
 
         stage('Run Selenium Tests') {
             steps {
-                bat 'venv\\Scripts\\activate && pytest --junitxml=reports/results.xml'
+                bat 'pytest --html=reports/report.html --self-contained-html'
             }
         }
 
         stage('Publish Test Results') {
             steps {
-                junit 'reports/results.xml'
+                publishHTML (target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'reports',
+                    reportFiles: 'report.html',
+                    reportName: "Test Report"
+                ])
+
             }
         }
 
